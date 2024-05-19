@@ -7,6 +7,7 @@ const Read: React.FC = () => {
     (state: RootState) => state.reviewedBooks.reviewedBooks
   );
 
+  // If no books have been reviewed yet
   if (reviewedBooks.length === 0) {
     return <p>No books reviewed yet.</p>;
   }

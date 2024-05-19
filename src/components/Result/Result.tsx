@@ -5,6 +5,7 @@ import * as TitleTypes from "../../types/titleTypes";
 import * as AuthorTypes from "../../types/authorTypes";
 import ResultCard from "./ResultCard";
 
+// Number of books per page
 const ITEMS_PER_PAGE = 8;
 
 const Result = () => {
@@ -19,6 +20,7 @@ const Result = () => {
     }
   }, [searchData]);
 
+  // Pagination
   useEffect(() => {
     if (result) {
       const combinedResults = [
@@ -35,12 +37,14 @@ const Result = () => {
     }
   }, [result]);
 
+  // Pagination for next page
   const handlePageUp = () => {
     setPaginationTracker((prev) =>
       prev === paginationArray.length - 1 ? 0 : prev + 1
     );
   };
 
+  // Pagination for previous page
   const handlePageDown = () => {
     setPaginationTracker((prev) => (prev === 0 ? 0 : prev - 1));
   };

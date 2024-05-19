@@ -6,6 +6,7 @@ const Books = () => {
   const dispatch = useDispatch();
   const favoriteBooks = useSelector((state: RootState) => state.books.books);
 
+  // Remove book from favorites
   const handleRemoveBook = (book: any) => {
     dispatch(removeBook({ book }));
   };

@@ -6,14 +6,17 @@ const SearchField = () => {
   const [searchType, setSearchType] = useState("title");
   const { loading, error, search } = useSearch();
 
+  // Handling the search input
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
+  // Handling the search type if Author or Title
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSearchType(e.target.value);
   };
 
+  // Handling the search button
   const handleClick = () => {
     if (query) {
       search(query, searchType);

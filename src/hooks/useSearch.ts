@@ -8,10 +8,12 @@ const useSearch = () => {
   const [error, setError] = useState("");
   const dispatch = useDispatch();
 
+  // Search function
   const search = async (searchTerm: string, searchType: string) => {
     setLoading(true);
     setError("");
 
+    // Replacing spaces with "+" for the API
     const fixedSearchTerm = searchTerm.replace(/ /g, "+");
 
     try {

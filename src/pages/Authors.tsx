@@ -8,6 +8,7 @@ const Authors = () => {
     (state: RootState) => state.authors.authors
   );
 
+  // Remove author from favorites
   const handleRemoveAuthor = (authorName: string) => {
     dispatch(removeAuthor({ authorName }));
   };

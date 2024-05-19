@@ -14,6 +14,8 @@ const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers: {
+    
+    // Set search result
     setSearchResult: (state, action) => {
       if (action.payload.type === "title") {
         state.title = action.payload.title;

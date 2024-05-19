@@ -2,7 +2,6 @@ import React from "react";
 import * as TitleTypes from "../../types/titleTypes";
 import * as AuthorTypes from "../../types/authorTypes";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { RootState } from "../../redux/store/store";
 import { addBook, removeBook } from "../../redux/slices/bookSlice";
 import { addAuthor, removeAuthor } from "../../redux/slices/authorSlice";
@@ -20,6 +19,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ item, inputType }) => {
   const authorName = item.author_name?.join(", ") || "";
   const isAuthorFavorited = favoriteAuthors.includes(authorName);
 
+  // Handling the favorite button
   const handleFavorite = (type: string) => {
     if (type === "book") {
       if (isBookFavorited) {
@@ -78,7 +78,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ item, inputType }) => {
             onClick={() => dispatch(openModal(item))}
             className="bg-green-500 text-white py-2 px-4 rounded text-center hover:bg-green-600 transition duration-200"
           >
-            View Details
+            View more
           </button>
         </div>
       </div>

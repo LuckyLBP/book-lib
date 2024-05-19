@@ -10,10 +10,14 @@ const favBooksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
+
+    // Add book to favorites
     addBook(state, action: PayloadAction<{ book: any }>) {
       const { book } = action.payload;
       state.books.push(book);
     },
+
+    // Remove book from favorites
     removeBook(state, action: PayloadAction<{ book: any }>) {
       const { book: bookToRemove } = action.payload;
       state.books = state.books.filter(book => book.key !== bookToRemove.key);

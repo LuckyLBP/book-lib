@@ -6,6 +6,7 @@ export const useModalState = () => {
   const dispatch = useDispatch();
   const { isVisible, book } = useSelector((state: RootState) => state.modal);
 
+  // Closing the modal
   const handleClose = () => {
     dispatch(closeModal());
   };

@@ -10,10 +10,14 @@ const authorSlice = createSlice({
   name: 'authors',
   initialState,
   reducers: {
+
+    // Add author to list
     addAuthor(state, action: PayloadAction<{ authorName: string }>) {
       const { authorName } = action.payload;
       state.authors.push(authorName);
     },
+
+    // Remove author from list
     removeAuthor(state, action: PayloadAction<{ authorName: string }>) {
       const { authorName } = action.payload;
       state.authors = state.authors.filter(name => name !== authorName);

@@ -9,6 +9,7 @@ interface Review {
 export const useReviews = () => {
   const [reviews, setReviews] = useState<{ [key: string]: Review[] }>({});
 
+  // Add a review to a book
   const addReview = (bookId: string, review: Review) => {
     setReviews((prevReviews) => ({
       ...prevReviews,
@@ -16,6 +17,7 @@ export const useReviews = () => {
     }));
   };
 
+  // Get reviews for a book
   const getReviews = (bookId: string): Review[] => {
     return reviews[bookId] || [];
   };

@@ -15,14 +15,17 @@ const BookModal: React.FC = () => {
 
   if (!isVisible || !book) return null;
 
+  // Getting the genre, first sentence, and total pages
   const genre = book.subject ? book.subject.join(", ") : "Nope";
   const firstSentence = book.first_sentence || "Nope";
   const totalPages = book.number_of_pages_median || "Nope";
 
+  // Charlimit for the genre
   const charLimit = 100;
   const truncatedGenre =
     genre.length > charLimit ? genre.slice(0, charLimit) + "..." : genre;
 
+  // Submitting the Review
   const handleReviewSubmit = () => {
     const reviewData = { review, rating, pagesRead };
     addReview(book.key, reviewData);
@@ -40,6 +43,7 @@ const BookModal: React.FC = () => {
     setPagesRead(0);
   };
 
+  // Getting the reviews for the book
   const bookReviews = getReviews(book.key);
 
   return (
@@ -47,7 +51,7 @@ const BookModal: React.FC = () => {
       <div className="bg-white p-6 rounded-lg max-w-lg w-full max-h-full overflow-y-auto relative">
         <button
           onClick={handleClose}
-          className="absolute top-2 right-2 text-gray-600"
+          className="absolute top-2 left-2 text-gray-600"
         >
           ×
         </button>
@@ -70,7 +74,7 @@ const BookModal: React.FC = () => {
               onClick={() => setIsSubjectCollapsed(!isSubjectCollapsed)}
               className="text-blue-500 mb-2"
             >
-              {isSubjectCollapsed ? "Show Subjects" : "Hide Subjects"}
+              {isSubjectCollapsed ? "Show more" : "Hide"}
             </button>
             <p className="text-gray-700">
               <strong>First Sentence:</strong> {firstSentence}

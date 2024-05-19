@@ -26,6 +26,8 @@ const reviewedBooksSlice = createSlice({
   name: 'reviewedBooks',
   initialState,
   reducers: {
+
+    // Add reviewed book
     addReviewedBook: (state, action: PayloadAction<ReviewedBook>) => {
       const existingBook = state.reviewedBooks.find(
         (book) => book.id === action.payload.id

@@ -8,6 +8,8 @@ export const useFavorite = (
   inputType: string,
   itemToFavorite: TitleTypes.Doc | AuthorTypes.Doc | string
 ) => {
+
+  // Handling the favorite button
   if (favoriteType === "book") {
     console.log("Favoriting a book");
 

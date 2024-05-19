@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ModalState {
   isVisible: boolean;
-  book: any | null; // Define the type according to your book details
+  book: any | null; 
 }
 
 const initialState: ModalState = {
@@ -14,10 +14,14 @@ const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
+
+    // Open modal
     openModal(state, action: PayloadAction<any>) {
       state.isVisible = true;
       state.book = action.payload;
     },
+
+    // Close modal
     closeModal(state) {
       state.isVisible = false;
       state.book = null;

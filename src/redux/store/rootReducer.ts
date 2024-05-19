@@ -11,7 +11,7 @@ export interface RootState {
   authors: AuthorState;
   books: BooksState;
   modal: any;
-  reviewedBooks: any; // Add reviewedBooks state
+  reviewedBooks: any;
 }
 
 export const rootReducer = combineReducers({
@@ -19,5 +19,5 @@ export const rootReducer = combineReducers({
   authors: authorsReducer,
   books: booksReducer,
   modal: modalReducer,
-  reviewedBooks: reviewedBooksReducer, // Add reviewed books reducer
+  reviewedBooks: reviewedBooksReducer,
 });
