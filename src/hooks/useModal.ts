@@ -4,6 +4,8 @@ import { closeModal } from "../redux/slices/modalSlice";
 
 export const useModalState = () => {
   const dispatch = useDispatch();
+
+  // Getting the modal state
   const { isVisible, book } = useSelector((state: RootState) => state.modal);
 
   // Closing the modal
